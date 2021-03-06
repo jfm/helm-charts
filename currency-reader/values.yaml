@@ -13,8 +13,11 @@ image:
 imagePullSecrets:
   - name: ghcr-credentials
 
-nameOverride: ""
+nameOverride: "currency-reader"
 fullnameOverride: ""
+
+kafka:
+  bootstrapservers: "localhost:4321"
 
 serviceAccount:
   # Specifies whether a service account should be created
