@@ -1,9 +1,9 @@
 apiVersion: v2
 name: currency-reader
-description: A Helm chart for Kubernetes
+description: A Helm for the currency-reader microservice
 
 type: application
 
-version: 0.1.6
+version: 0.1.7
 
 appVersion: "1.16.0"
