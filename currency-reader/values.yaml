@@ -29,9 +29,9 @@ serviceAccount:
   name: ""
 
 podAnnotations:
-  - prometheus.io/scrape: "true"
-  - prometheus.io/path: /metrics
-  - prometheus.io/port: "80"
+  prometheus.io/scrape: "true"
+  prometheus.io/path: /metrics
+  prometheus.io/port: "80"
 podSecurityContext: {}
   # fsGroup: 2000
 
