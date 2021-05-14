@@ -35,13 +35,13 @@ spec:
           env:
             - name: KAFKA_BOOTSTRAP_SERVERS
               value: {{ .Values.kafka.bootstrapservers }}
-             - name: CONSUMER_KEY
+            - name: CONSUMER_KEY
               value: {{ .Values.twitter.consumer_key }}
-             - name: CONSUMER_SECRET
+            - name: CONSUMER_SECRET
               value: {{ .Values.twitter.consumer_secret }}
-             - name: ACCESS_TOKEN_KEY
+            - name: ACCESS_TOKEN_KEY
               value: {{ .Values.twitter.access_token_key }}
-             - name: ACCESS_TOKEN_SECRET
+            - name: ACCESS_TOKEN_SECRET
               value: {{ .Values.twitter.access_token_secret }}
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
