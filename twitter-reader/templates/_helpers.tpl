@@ -1,7 +1,7 @@
 {{/*
 Expand the name of the chart.
 */}}
-{{- define "currency-reader.name" -}}
+{{- define "twitter-reader.name" -}}
 {{- default .Chart.Name .Values.nameOverride | trunc 63 | trimSuffix "-" }}
 {{- end }}
 
@@ -10,7 +10,7 @@ Create a default fully qualified app name.
 We truncate at 63 chars because some Kubernetes name fields are limited to this (by the DNS naming spec).
 If release name contains chart name it will be used as a full name.
 */}}
-{{- define "currency-reader.fullname" -}}
+{{- define "twitter-reader.fullname" -}}
 {{- if .Values.fullnameOverride }}
 {{- .Values.fullnameOverride | trunc 63 | trimSuffix "-" }}
 {{- else }}
@@ -26,16 +26,16 @@ If release name contains chart name it will be used as a full name.
 {{/*
 Create chart name and version as used by the chart label.
 */}}
-{{- define "currency-reader.chart" -}}
+{{- define "twitter-reader.chart" -}}
 {{- printf "%s-%s" .Chart.Name .Chart.Version | replace "+" "_" | trunc 63 | trimSuffix "-" }}
 {{- end }}
 
 {{/*
 Common labels
 */}}
-{{- define "currency-reader.labels" -}}
-helm.sh/chart: {{ include "currency-reader.chart" . }}
-{{ include "currency-reader.selectorLabels" . }}
+{{- define "twitter-reader.labels" -}}
+helm.sh/chart: {{ include "twitter-reader.chart" . }}
+{{ include "twitter-reader.selectorLabels" . }}
 {{- if .Chart.AppVersion }}
 app.kubernetes.io/version: {{ .Chart.AppVersion | quote }}
 {{- end }}
@@ -45,17 +45,17 @@ app.kubernetes.io/managed-by: {{ .Release.Service }}
 {{/*
 Selector labels
 */}}
-{{- define "currency-reader.selectorLabels" -}}
-app.kubernetes.io/name: {{ include "currency-reader.name" . }}
+{{- define "twitter-reader.selectorLabels" -}}
+app.kubernetes.io/name: {{ include "twitter-reader.name" . }}
 app.kubernetes.io/instance: {{ .Release.Name }}
 {{- end }}
 
 {{/*
 Create the name of the service account to use
 */}}
-{{- define "currency-reader.serviceAccountName" -}}
+{{- define "twitter-reader.serviceAccountName" -}}
 {{- if .Values.serviceAccount.create }}
-{{- default (include "currency-reader.fullname" .) .Values.serviceAccount.name }}
+{{- default (include "twitter-reader.fullname" .) .Values.serviceAccount.name }}
 {{- else }}
 {{- default "default" .Values.serviceAccount.name }}
 {{- end }}
