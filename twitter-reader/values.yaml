@@ -19,6 +19,15 @@ fullnameOverride: ""
 kafka:
   bootstrapservers: "localhost:4321"
 
+consumer:
+  key: abcd
+  secret: abcd
+
+access:
+  token:
+    key: abcd
+    secret: abcd
+
 serviceAccount:
   # Specifies whether a service account should be created
   create: false
