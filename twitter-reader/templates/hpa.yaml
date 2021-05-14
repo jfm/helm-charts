@@ -2,14 +2,14 @@
 apiVersion: autoscaling/v2beta1
 kind: HorizontalPodAutoscaler
 metadata:
-  name: {{ include "currency-reader.fullname" . }}
+  name: {{ include "twitter-reader.fullname" . }}
   labels:
-    {{- include "currency-reader.labels" . | nindent 4 }}
+    {{- include "twitter-reader.labels" . | nindent 4 }}
 spec:
   scaleTargetRef:
     apiVersion: apps/v1
     kind: Deployment
-    name: {{ include "currency-reader.fullname" . }}
+    name: {{ include "twitter-reader.fullname" . }}
   minReplicas: {{ .Values.autoscaling.minReplicas }}
   maxReplicas: {{ .Values.autoscaling.maxReplicas }}
   metrics:
